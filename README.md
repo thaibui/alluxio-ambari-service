@@ -1,6 +1,6 @@
-## Alluxio Service for Ambari 2.2 (HDP 2.4)
+## Alluxio Service for Ambari 2.2 (IOP 4.X tech preview)
 
-Alluxio v 1.0.1 - Deploys on HDP 2.4
+Alluxio v 1.0.1 - Deploys on IOP 4.X tech preview
 
 
 Install, start/stop, status, service check functional
