@@ -8,14 +8,14 @@ Install, start/stop, status, service check functional
 
 **1. Clone the service into the dir for the Stack you are running in Ambari**
 
-**- Adding Alluxio to a HDP 2.4 Cluster**
+**- Adding Alluxio to a BigInsights 4.x tech preview Cluster**
 
 ```
 # Clone the service deployer
-git clone https://github.com/chuyqa/alluxio-ambari-service /var/lib/ambari-server/resources/stacks/HDP/2.4/services/ALLUXIO
+git clone https://github.com/chuyqa/alluxio-ambari-service /var/lib/ambari-server/resources/stacks/BigInsights/4.3/services/ALLUXIO
 
 #git has a 100mb file limit, download alluxio source to your stack dir
-wget http://alluxio.org/downloads/files/1.0.1/alluxio-1.0.1-bin.tar.gz -P /var/lib/ambari-server/resources/stacks/HDP/2.4/services/ALLUXIO/package/files 
+wget http://alluxio.org/downloads/files/1.0.1/alluxio-1.0.1-bin.tar.gz -P /var/lib/ambari-server/resources/stacks/BigInsights/4.3/services/ALLUXIO/package/files 
 
 ambari-server restart
 
