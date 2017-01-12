@@ -1,7 +1,7 @@
 #!/usr/bin/config python
 from resource_management import *
 from resource_management.libraries.functions.default import default
-from resource_management.libraries.functions.version import compare_versions, format_hdp_stack_version
+from resource_management.libraries.functions.version import compare_versions, format_stack_version
 from resource_management.libraries.functions.format import format
 
 import commands
@@ -25,7 +25,12 @@ worker_mem = config['configurations']['alluxio-env']['alluxio.worker.memory']
 
 # Find current stack and version to push agent files to
 stack_name = default("/hostLevelParams/stack_name", None)
-stack_version = format_hdp_stack_version(default("/commandParams/version", None))
+
+# stack version
+version = default("/commandParams/version", None)
+stack_version_unformatted = config['hostLevelParams']['stack_version']
+stack_version_formatted = format_stack_version(stack_version_unformatted)
+
 
 # hadoop params
 namenode_address = None
@@ -39,11 +44,11 @@ else:
 
 # Set install dir
 cmd = "/usr/bin/hdp-select versions"
-usr_base = "/usr/hdp/"
+usr_base = "/usr/iop/"
 base_dir = usr_base + commands.getoutput(cmd) + "/alluxio/"
   
 # Alluxio archive on agent nodes
-alluxio_package_dir = "/var/lib/ambari-agent/cache/stacks/" + stack_name + "/" + stack_version[:3] + "/services/ALLUXIO/package/"
+alluxio_package_dir = "/var/lib/ambari-agent/cache/stacks/" + stack_name + "/" + stack_version_formatted[:3] + "/services/ALLUXIO/package/"
 
 # alluxio log dir
 log_dir = config['configurations']['alluxio-env']['alluxio.log.dir']
