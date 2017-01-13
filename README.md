@@ -12,7 +12,7 @@ Install, start/stop, status, service check functional
 
 ```
 # Clone the service deployer
-git clone https://github.com/chuyqa/alluxio-ambari-service /var/lib/ambari-server/resources/stacks/BigInsights/4.3/services/ALLUXIO
+git clone -b ambari-2.4 https://github.com/chuyqa/alluxio-ambari-service /var/lib/ambari-server/resources/stacks/BigInsights/4.3/services/ALLUXIO
 
 #git has a 100mb file limit, download alluxio source to your stack dir
 wget http://alluxio.org/downloads/files/1.0.1/alluxio-1.0.1-bin.tar.gz -P /var/lib/ambari-server/resources/stacks/BigInsights/4.3/services/ALLUXIO/package/files 
